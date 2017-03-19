@@ -1,10 +1,9 @@
 <html>
  <head>
-     <title> Contact Us</title>
+     <title>Contact Us</title>
  </head>
  <body>
-    <br><br>
-    
+    <br><br> 
       <!--registration form -->
         <center><a href='http://217.199.187.73/rajatkumar87500.com/'> Home </a></center>
         <br><br/><center> Contact US</center><br/><br />
