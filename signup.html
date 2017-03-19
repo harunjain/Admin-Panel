@@ -1,0 +1,105 @@
+<html>
+
+	<head>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+		<link href="common.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	</head>
+
+	<body>
+	
+		<main>
+			<center>
+				
+			
+				 <div class="section"></div>
+
+      <h3 class="indigo-text">Sign Up</h3>
+      <div class="section"></div>
+
+		
+			<div class="container logincontainer z-depth-1 grey lighten-4 row">	
+             
+              	<form class="col s12">
+					<div class="row">
+					<div class="input-field col s12">
+						<i class="small material-icons prefix">email</i>	
+						<input type="email" id="email" class="validate" name="email" required>
+						<label for="email">Enter email</label>
+						<span id="errorfield"></span>
+						</div></div>
+					<div class="row">
+					<div class="input-field col s12">
+						<i class="small material-icons prefix">lock</i>	
+						<input type="password" id="psswd" class="validate" name="psswd" required>
+						<label for="psswd">Enter Password</label>
+						
+						</div>	
+						<br>
+						
+						<br><br>
+						<center>
+              <div class='row'>
+                <button name='btn_login' class='col s12 btn btn-large waves-effect red' id="submit">Submit</button>
+              </div>
+            </center>
+					</div>	
+			
+				
+				</form>
+				
+            </div>
+			
+			<div class="errorcontainer">
+				
+					<p id="Psswderror" style="color:red"></p>
+				
+			</div>	
+            
+          
+				
+			</center>
+		</main>
+		
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    
+		<script>      
+	$(document).ready(function() {
+    Materialize.updateTextFields();
+  });	
+			
+	
+	
+			
+	</script>	
+	
+	<script>
+	$("#submit").on("click",function() {
+				
+		var errormsg;
+		var mail =	document.getElementById("email").value;
+		var reg = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i
+		var	psswd = document.getElementById("psswd").value;
+		var psswderr = document.getElementById("Psswderror");
+		
+		var result = reg.test(psswd);
+		
+	 	if (psswd.length < 8) {
+			
+			 psswderr.innerHTML = "Password should be 8 characters long";
+		}
+		else if(result == false) {
+			
+			psswderr.innerHTML = "Password should be alphanumeric";
+		}
+		
+	});	
+	</script>	
+		
+	</body>
+
+</html>
