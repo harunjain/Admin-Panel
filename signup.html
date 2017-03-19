@@ -1,105 +1,166 @@
 <html>
 
-	<head>
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-		<link href="common.css" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
-	</head>
+<head>
 
-	<body>
-	
-		<main>
-			<center>
-				
-			
-				 <div class="section"></div>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<link href="common.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <h3 class="indigo-text">Sign Up</h3>
-      <div class="section"></div>
+</head>
 
-		
-			<div class="container logincontainer z-depth-1 grey lighten-4 row">	
-             
-              	<form class="col s12">
+<body>
+
+	<main>
+		<center>
+
+
+			<div class="section"></div>
+
+			<h3 class="indigo-text">Sign Up</h3>
+			<div class="section"></div>
+
+
+			<div class="container logincontainer z-depth-1 grey lighten-4 row">
+
+				<form class="col s12" method="post" action="">
+					<!--add link inaction attribute -->
 					<div class="row">
-					<div class="input-field col s12">
-						<i class="small material-icons prefix">email</i>	
-						<input type="email" id="email" class="validate" name="email" required>
-						<label for="email">Enter email</label>
-						<span id="errorfield"></span>
-						</div></div>
+						<div class="input-field col s12">
+							<i class="small material-icons prefix">perm_identity</i>
+							<input type="text" id="name" class="validate" name="text" oninput="isName()" onkeydown="validateName()" required>
+							<span class="errorfield" id="errorname"></span>
+							<label for="name">Enter Name</label>
+						</div>
+					</div>
+
+
 					<div class="row">
-					<div class="input-field col s12">
-						<i class="small material-icons prefix">lock</i>	
-						<input type="password" id="psswd" class="validate" name="psswd" required>
-						<label for="psswd">Enter Password</label>
-						
-						</div>	
+						<div class="input-field col s12">
+							<i class="small material-icons prefix">email</i>
+							<input type="text" id="email" class="validate" name="email" onkeydown="validateMail()" required>
+							<label for="email">Enter email</label>
+							<span class="errorfield" id="errormail"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="small material-icons prefix">lock</i>
+							<input type="password" id="psswd" class="validate" name="psswd" required>
+							<label for="psswd">Enter Password</label>
+						</div>
 						<br>
-						
+
 						<br><br>
 						<center>
-              <div class='row'>
-                <button name='btn_login' class='col s12 btn btn-large waves-effect red' id="submit">Submit</button>
-              </div>
-            </center>
-					</div>	
-			
-				
+							<div class='row'>
+								<button name='btn_login' class='col s12 btn btn-large waves-effect red' id="submit">Submit</button>
+							</div>
+						</center>
+					</div>
+
+
 				</form>
-				
-            </div>
-			
-			<div class="errorcontainer">
-				
-					<p id="Psswderror" style="color:red"></p>
-				
-			</div>	
-            
-          
-				
-			</center>
-		</main>
+
+			</div>
+
 		
+
+
+		</center>
+	</main>
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    
-		<script>      
-	$(document).ready(function() {
-    Materialize.updateTextFields();
-  });	
-			
-	
-	
-			
-	</script>	
-	
+
 	<script>
-	$("#submit").on("click",function() {
-				
-		var errormsg;
-		var mail =	document.getElementById("email").value;
-		var reg = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i
-		var	psswd = document.getElementById("psswd").value;
-		var psswderr = document.getElementById("Psswderror");
-		
-		var result = reg.test(psswd);
-		
-	 	if (psswd.length < 8) {
-			
-			 psswderr.innerHTML = "Password should be 8 characters long";
+		$(document).ready(function() {
+			Materialize.updateTextFields();
+			$("#email,#psswd, button").each(function() {					//Only input field is enabled first
+				$(this).prop("disabled", true);											//rest of the fields and button are disabled
+			});
+		});
+	</script>
+
+	<script>
+	//isName() function is triggered when a user clicks or navigate to the add username field
+	//if username is blank then it throws error message, else it returns validateName() function
+		function isName() {
+			var name = document.getElementById("name").value;
+			if (name == "") {
+				$("#errorname").html("name cannot be blank");
+				$("#email,#psswd, button").each(function() {  //jquery code for disabling other fields and submit button
+					$(this).prop("disabled", true);
+				});
+			} else {
+				$("#errorname").text("");
+				$("#email,#psswd,button").each(function() {
+					$(this).prop("disabled", false);						//jquery code for enabling other fields and submit button
+				});
+				return validateName();
+			}
 		}
-		else if(result == false) {
-			
-			psswderr.innerHTML = "Password should be alphanumeric";
+//validateName() is the main function which checks for username via regex and numerical condition.
+		function validateName() {
+			var name = document.getElementById("name").value;
+			var RegExName = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/;
+			var namearr = [];
+			var newstring = name.split(""); 			//var name is split into individual char and stored in an array
+			namearr = newstring;								  //for loop is used to traverse the individual char in array and check against the conditions. Even if a single character is wrong, then it throws the error.
+			for (x = 0; x < namearr.length; x++) {
+				if (isNaN(namearr[x]) == false || RegExName.test(namearr[x]) == true) {
+					$("#errorname").html("name can only be alphabetic");
+					$("#email,#psswd, button").each(function() {
+						$(this).prop("disabled", true);     //fields disabled
+					});
+				} else {
+					$("#errorname").text("");
+					$("#email,#psswd,button").each(function() {
+						$(this).prop("disabled", false);   //fields enabled
+					});
+				}
+			};
 		}
-		
-	});	
-	</script>	
-		
-	</body>
+
+		//validateMail() works like isName(). It checks fore user email via regex and condition
+		function validateMail() {
+
+			var RegExMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			var email = document.getElementById("email").value;
+			if (email == "" || RegExMail.test(email) == false) {
+				$("#errormail").html("Please enter a valid Email address");
+				$("#psswd, button").each(function() {
+					$(this).prop("disabled", true);
+				});
+
+			} else {
+				$("#errormail").html("");
+				$("#psswd, button").each(function() {
+					$(this).prop("disabled", false);
+				});
+			}
+
+		}
+
+
+		/*	{
+				if you want to implement password validation
+
+				var psswd = document.getElementById("psswd").value;
+				var psswderr = document.getElementById("Psswderror");
+
+				if (psswd.length < 8) {
+
+					psswderr.innerHTML = "Password should be 8 characters long";
+				}
+				else {
+					return true;
+			}
+
+
+			*/
+	</script>
+
+</body>
 
 </html>
