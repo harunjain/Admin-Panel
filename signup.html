@@ -46,15 +46,17 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="small material-icons prefix">lock</i>
-							<input type="password" id="psswd" class="validate" name="psswd" required>
+							<input type="password" id="psswd" class="validate" name="psswd" required onkeydown="validatePsswd()">
 							<label for="psswd">Enter Password</label>
+							<span id="warning" style="display:none;"> Password should be equal to or greater than 8 characters</span>
+							<span class="errorfield" id="errorpsswd"></span>
 						</div>
 						<br>
 
 						<br><br>
 						<center>
 							<div class='row'>
-								<button name='btn_login' class='col s12 btn btn-large waves-effect red' id="submit">Submit</button>
+								<button name='btn_login' class='col s12 btn btn-large waves-effect green' id="submit">Submit</button>
 							</div>
 						</center>
 					</div>
@@ -92,9 +94,10 @@
 				$("#email,#psswd, button").each(function() {  //jquery code for disabling other fields and submit button
 					$(this).prop("disabled", true);
 				});
-			} else {
+			}
+			else {
 				$("#errorname").text("");
-				$("#email,#psswd,button").each(function() {
+				$("#email,#psswd").each(function() {
 					$(this).prop("disabled", false);						//jquery code for enabling other fields and submit button
 				});
 				return validateName();
@@ -115,7 +118,7 @@
 					});
 				} else {
 					$("#errorname").text("");
-					$("#email,#psswd,button").each(function() {
+					$("#email,#psswd").each(function() {
 						$(this).prop("disabled", false);   //fields enabled
 					});
 				}
@@ -135,7 +138,7 @@
 
 			} else {
 				$("#errormail").html("");
-				$("#psswd, button").each(function() {
+				$("#psswd").each(function() {
 					$(this).prop("disabled", false);
 				});
 			}
@@ -143,22 +146,22 @@
 		}
 
 
-		/*	{
-				if you want to implement password validation
 
+		function validatePsswd() {
 				var psswd = document.getElementById("psswd").value;
-				var psswderr = document.getElementById("Psswderror");
-
+				$("#warning").css("display","block");
 				if (psswd.length < 8) {
+					$("button").prop("disabled", true);
+					return false;
 
-					psswderr.innerHTML = "Password should be 8 characters long";
+
 				}
 				else {
+					$("button").prop("disabled", false);
 					return true;
-			}
+				}
 
-
-			*/
+		}
 	</script>
 
 </body>
