@@ -1,0 +1,33 @@
+ body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    body {
+      background: #fff;
+    }
+
+.logincontainer {
+	width: 400px;
+	display: inline-block;
+	padding: 32px 48px 0px 48px;
+	border: 1px solid #EEE;
+}
+
+.logincontainer:hover {
+
+	box-shadow: 8px 8px 3px #888888
+}
+
+
+
+.errorfield {
+  color: red;
+  font-style: italic;
+  text-align: center;
+}

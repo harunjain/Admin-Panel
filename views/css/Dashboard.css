@@ -1,0 +1,69 @@
+.contact-center {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    margin-left: 430px;
+}
+
+.input-field .prefix.active {
+    color: #2196F3;
+}
+
+.input-field input[type=email]:focus:not([readonly]) {
+    border-bottom: 1px solid #2196F3;
+    box-shadow: 0 1px 0 0 #2196F3;
+}
+
+.input-field input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #2196F3;
+    box-shadow: 0 1px 0 0 #2196F3;
+}
+
+
+.input-field input[type=tel]:focus:not([readonly]) {
+    border-bottom: 1px solid #2196F3;
+    box-shadow: 0 1px 0 0 #2196F3;
+}
+
+
+
+
+
+table,th,td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+.showProject {
+  display: none;
+
+
+}
+.showYear {
+	display: none;	
+}
+
+.books-front {
+	display: block; 
+}
+.books-edit {
+	display:none;
+}
+
+.sideText {
+font-size:20px;
+color:#2196F3;
+}
+
+.books-create {
+	display:none;
+}
+
+.books-subject-create {
+	display: none;	
+}
+
+
+.number {
+font-size:100px;
+color: #2196F3;	
+}

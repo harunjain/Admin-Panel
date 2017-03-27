@@ -1,0 +1,505 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/Dashboard.css" rel="stylesheet" type="text/css">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper blue">
+            <span class="brand-logo right">Welcome USER /<a href="#">Logout</a></span>
+            <span class="brand-logo left">Organization's Admin Panel</span>
+        </div>
+
+    </nav>
+    <br>
+
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs tabs-fixed-width white">
+                <li class="tab col s3" id="dash"><a href="#dashboard" class="white">Dashboard</a></li>
+                <li class="tab col s3" id="about"><a href="#aboutus">AboutUs</a></li>
+                <li class="tab col s3" id="con"><a href="#contactus">Contact Us</a></li>
+                <li class="tab col s3" id="pro"><a href="#projects">Projects</a></li>
+                <li class="tab col s3" id="evee"><a href="#Events">Events</a></li>
+                <li class="tab col s3" id="ach"><a href="#achieve">Achievements</a></li>
+                <li class="tab col s3" id="pub"><a href="#pub">Publications</a></li>
+                <li class="tab col s3" id="book"><a href="#books">Books</a></li>
+            </ul>
+        </div>
+        <div class="col s2" style="border-right:1px solid; height:500px;">
+			<h4>Side Menu</h4>
+			
+			<ul>
+				<li id="add-section"></li>
+				<div id="project-date" style="display:none;">
+					<ul>
+						<li><a href="#">2017</a></li>
+					<li><a href="#">2016</a></li>
+					<li><a href="#">2015</a></li>
+					<li><a href="#">2014</a></li>
+					</ul>	
+				</div>
+				<div id="subject-book" style="display:none;">
+					<p class="sideText">Subjects</p>
+					<li><a href="#">Social</a></li>
+					<li><a href="#">Religious</a></li>
+					<li><a href="#">XYZ</a></li>
+				</div>
+			</ul>
+        </div>
+		<div style="margin-left:1%">
+	<div>	
+        <div id="dashboard" class="col s10">
+			<div id="project-no" class="col s4">
+				<h1 class="number">10</h1>
+				<label style="text-align:center;">No of current Projects</label>
+			</div>
+			<div id="events-no" class="col s4">
+				<h1 class="number">20</h1>
+				<label style="text-align:center;">No of Current Events</label>
+			</div>
+			<div id="ach-no" class="col s4">
+				<h1 class="number">15</h1>
+				<label style="text-align:center;">No of Current Achievements</label>
+			</div>
+		
+			<div id="publications-no" class="col s4">
+			<br><br>	<h1 class="number">5</h1>
+				<label style="text-align:center;">No of Current Publications</label>
+			</div>
+			<div id="books-no" class="col s4">
+			<br><br>	<h1 class="number">13</h1>
+				<label style="text-align:center;">No of Current Books</label>
+			</div>
+        </div>
+        <div id="aboutus" class="col s8">
+            
+                <h3 class="center-align" style="color:#2196F3">About Us</h3><br><br>
+                <form method="post" action="#">
+
+                    <div class="col s2">
+                        <p style="text-align:left;" class="sideText">Content</p>
+                    </div>
+                    <div class="col s8">	
+                        <textarea style="height:200px;"></textarea>
+                    </div>
+                    <div class="col s4">
+                        <br>
+                        <p style="text-align:;" class="sideText">Image</p>
+                    </div>
+                    <div class="col s6">
+                        <br><br><input type="file" style="margin-left:-145px;">
+                    </div>
+                    <div class="col s2">
+                    </div>
+                    <div class="col s6">
+                        <br><br>
+                        <button type="submit" class="btn waves-effect waves-light blue">Submit
+                              <i class="material-icons right">send</i>
+                            </button>
+                    </div>
+                </form>
+          
+
+        </div>
+        <div id="contactus" class="col s12" style="position:relative; margin-top:-470px;">
+            <div class="row">
+                <h2 class="center-align" style="color:#2196F3;">Contact Info</h2>
+                
+                <form method="post" action="#">
+                    <div class="contact-center">
+                        <div class="row">
+                            <div class="input-field">
+                                <i class="material-icons prefix">email</i>
+                                <input type="email" class="validate">
+                                <label for="email" data-error="wrong" data-success="right"></label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix">location_on</i>
+                                <input type="text" class="validate">
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix">phone</i>
+                                <input type="tel" class="validate">
+                                <label for="tel" data-error="wrong" data-success="right"></label>
+                            </div>
+                            <button type="submit" class="btn waves-effect waves-light blue" style="width:100%;">Submit
+
+                                    </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="projects" class="col s10">
+            <div class="row">
+                
+                <div class="col s8">
+                    <h5 style="color:#2196F3">Projects : 2017 </h5>
+                    
+                    <h5 class="showProject" style="color:#2196F3;">Create New Project </h5>
+                    <br>
+                    <div class="" id="tableview">
+                        <table style="width:100%" class="responsive-table" style="display:block;">
+                            <tr>
+                                <th>Topic of Project</th>
+                                <th>Date of creation</th>
+                                <th>Date of Last Modification</th>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Topic 2</a></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Topic 3</a></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Topic 4</a> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table><br>
+                        
+                            <button class="btn blue waves-effect waves-light" id="newproject">Create New Project
+                            	<i class="material-icons right">new_releases</i>
+                          	</button>
+                            <button class="btn blue waves-effect waves-light" id="newYear">Create New Year
+                            	<i class="material-icons right">today</i>
+                          </button>
+                        
+
+                    </div>
+                    <div class="showProject">
+						<form method="post" action="">
+                      		<div class="row">
+                        <div class="col s2">
+                            <p>Content</p>
+                        </div>
+                        <div class="col s8" >
+                            <textarea style="height:150px;"></textarea>
+                        </div><br><br><br><br><br><br><br>
+                        <div class="col s2">
+                            <p>Image</p>
+                        </div>
+                        <div class="col s8">
+                            <br>
+							<input type="file">
+                        	 <br><br><button class="btn blue waves-effect waves-light" type="submit">
+                            Create Project <i class="material-icons right">send</i>
+                      	    </button>
+							</div> 
+                    </div>
+						</form>
+				</div>
+					<div class="showYear">
+					<form method="post" action="">	
+                      <div class="row">
+						  <h5 style="color:#2196F3">Create New Year</h5>
+                        <div class="col s2">
+                            <p>Year</p>
+                        </div>
+						  <div class="col s4">
+                        <input type="date" class="datepicker">
+						  <button class="btn blue waves-effect waves-light" type="submit" style="width:100%;">
+                             Create Year<i class="material-icons right">send</i>
+                         </button>
+						  </div>
+                        </div>
+						</form> 
+                    </div>
+                </div>
+              </div>
+            </div>  
+        <div id="Events" class="col s8">asd</div>
+        <div id="achieve" class="col s8"></div>
+        <div id="pub" class="col s8"></div>
+        <div id="books" class="col s8">
+			<h5 style="color:#2196F3; margin-left:px;" id="temp">Social </h5>	
+			<div class="row" style="margin-left:px;">
+		    	<div class="books-front">
+							<table style="width:100%" class="responsive-table books-table" style="display:block;">
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Publisher</th>
+								<th>Currency</th>
+								<th>Price</th>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="first">First Title</a></td>
+                                <td></td>
+                                <td></td>
+								<td></td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="2" id="second">Second Title</a></td>
+                                <td></td>
+                                <td></td>
+								<td></td>
+								<td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="third">Third Title</a> </td>
+                                <td></td>
+                                <td></td>
+								<td></td>
+								<td></td>
+                            </tr>
+                        </table>
+							<br>
+							<button class="btn blue waves-effect waves-light" id="newBook">Create New Book Entery
+                            <i class="material-icons right">library_add</i>
+                          </button>
+                            <button class="btn blue waves-effect waves-light" id="newSubject">Create New Subject
+                            <i class="material-icons right">library_books</i>
+                          </button> 
+					</div>
+	     		<div class="books-edit">
+						   <form method="post" action="#">
+		    		   <h5>Showing deatils of <a href="#"><span id="insert_title"></span></a></h5>
+					   <div class="col s2">
+						   <p class="sideText"> Title</p>
+					   </div>
+						   <div class="col s6">
+							   <div class="input-field">
+								   <input type="text" class="validate" placeholder="Title of the book">
+							   </div>
+						   </div><br><br><br><br>
+						   <div class="col s2">
+						   <p class="sideText"> Author</p>
+					   </div>
+						   <div class="col s6">
+							   <div class="input-field">
+								   <input type="text" class="validate" placeholder="Author of the book">
+							   </div>
+						   </div><br><br><br><br>
+						   <div class="col s2">
+						   <p class="sideText"> Publisher</p>
+					   </div>
+						   <div class="col s6">
+							   <div class="input-field">
+								   <input type="text" class="validate" placeholder="Publisher of the book">
+							   </div>
+						   </div><br><br><br><br>
+						   <div class="col s2">
+							   <p class="sideText">Currency</p>
+						   </div>
+						   <div class="col s1">
+							   <input type="text" maxlength="4">
+						   </div>
+						   <div class="col s1">
+							   <p class="sideText">Price</p>
+						   </div>
+						   <div class="col s1">
+							   <input type="text" maxlength="7">
+						   </div>
+						   <div class="col s1">
+							   <p class="sideText">ISBN</p>
+						   </div>
+						   <div class="col s3">
+							   <input type="text">
+						   </div>
+						   <br><br><br><br>
+						   <div class="col s2">
+							   <p class="sideText">Image</p>
+						   </div><br>
+						   <div class="col s6">
+							   <input type="file">
+						   </div><br><br>
+							   <button class="btn blue waves-effect waves-light" id="newBook" type="submit">Update Book Entry
+                            <i class="material-icons right">new_releases</i>
+                          </button>
+                            <button class="btn blue waves-effect waves-light" id="newSubject" type="submit">Delete Book Entry
+                            <i class="material-icons right">delete</i>
+                          </button> 
+						   </form>
+						</div>
+				<div class="books-create">
+							<form method="post" action="#">
+		    		   <h5>Showing deatils of <a href="#"><span id="insert_title"></span></a></h5>
+					   <div class="col s2">
+						   <p class="sideText"> Title</p>
+					   </div>
+						   <div class="col s6">
+							   <div class="input-field">
+								   <input type="text" class="validate" placeholder="Title of the book">
+							   </div>
+						   </div><br><br><br><br>
+						   <div class="col s2">
+						   <p class="sideText"> Author</p>
+					   </div>
+						   <div class="col s6">
+							   <div class="input-field">
+								   <input type="text" class="validate" placeholder="Author of the book">
+							   </div>
+						   </div><br><br><br><br>
+						   <div class="col s2">
+						   <p class="sideText"> Publisher</p>
+					   </div>
+						   <div class="col s6">
+							   <div class="input-field">
+								   <input type="text" class="validate" placeholder="Publisher of the book">
+							   </div>
+						   </div><br><br><br><br>
+						   <div class="col s2">
+							   <p class="sideText">Currency</p>
+						   </div>
+						   <div class="col s1">
+							   <input type="text" maxlength="4">
+						   </div>
+						   <div class="col s1">
+							   <p class="sideText">Price</p>
+						   </div>
+						   <div class="col s1">
+							   <input type="text" maxlength="7">
+						   </div>
+						   <div class="col s1">
+							   <p class="sideText">ISBN</p>
+						   </div>
+						   <div class="col s3">
+							   <input type="text">
+						   </div>
+						   <br><br><br><br>
+						   <div class="col s2">
+							   <p class="sideText">Image</p>
+						   </div><br>
+						   <div class="col s6">
+							   <input type="file">
+						   </div><br><br>
+							   <button class="btn blue waves-effect waves-light" id="newBook" type="submit">Create Book Entry
+                          		</button>
+                            
+                           
+						   </form>
+				
+						</div>
+				<div class="books-subject-create">
+					<h5>Create New Subject</h5>
+					<form method="post" action="">
+					<div class="col s2">
+						<p class="sideText">Subject</p>
+					</div>	
+					<div class="col s4">
+						<div class="input-field">
+							<input type="text" class="validate">
+						</div>
+						<button class="btn blue waves-effect waves-light" type="submit">Create Subject</button> 
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('ul.tabs').tabs();
+             $('.datepicker').pickadate({
+    			selectMonths: true, // Creates a dropdown to control month
+ 	 		    selectYears: 40 // Creates a dropdown of 15 years to control year
+  });
+			$("#newproject").on("click", function() {
+                $("#tableview").css("display", "none");
+                $(".showProject").css("display", "block");
+                $(".btn-group-normal").css("display", "none");
+            });
+			
+			$("#newYear").on("click",function(){
+				$("#tableview").css("display", "none");
+                $(".showProject").css("display", "none");
+				$(".showYear").css("display","block");
+			});
+			
+			$("#first").on("click",function(){
+				var book_title = document.getElementById("first").innerHTML;
+				
+				$("#insert_title").html(book_title);
+				$(".books-edit").css("display","block");
+				$(".books-front").css("display","none");
+			});
+			
+			$("#newBook").on("click", function(){
+					$(".books-edit").css("display","none");
+					$(".books-front").css("display","none");
+					$(".books-create").css("display","block");
+			});
+			
+			$("#newSubject").on("click", function(){
+					$(".books-edit").css("display","none");
+					$(".books-front").css("display","none");
+					$(".books-create").css("display","none");
+					$("#temp").css("display","none");
+					$(".books-subject-create").css("display","block");
+				
+			});
+			
+			$("#dash").on("click",function() {
+				var curr_tab  = document.getElementById("dash").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","none");
+			});
+			$("#about").on("click",function() {
+				var curr_tab  = document.getElementById("about").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","none");
+			});
+			$("#con").on("click",function() {
+				var curr_tab  = document.getElementById("con").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","none");
+			});
+			$("#pro").on("click",function() {
+				var curr_tab  = document.getElementById("pro").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","block");
+				$("#subject-book").css("display","none");
+			});
+			$("#evee").on("click",function() {
+				var curr_tab  = document.getElementById("evee").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","none");
+			});
+			$("#ach").on("click",function() {
+				var curr_tab  = document.getElementById("ach").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","none");
+
+			});
+			$("#pub").on("click",function() {
+				var curr_tab  = document.getElementById("pub").innerHTML;
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","none");
+
+			});
+			$("#book").on("click",function() {
+				var curr_tab  = document.getElementById("book").innerHTML;
+				
+				$("#add-section").html(curr_tab);
+				$("#project-date").css("display","none");
+				$("#subject-book").css("display","block");
+
+			});
+							 
+        });
+    </script>
+</body>
+
+</html>
